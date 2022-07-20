@@ -427,3 +427,77 @@ body {
 	}
 }
 
+
+
+
+
+.comment-mobile {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 10px;
+
+	display: none;
+}
+
+
+.like-box-mobile {
+
+	background-color: #EAECF1;
+	padding: 5px 10px;
+	border-radius: 10px;
+	
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 80px;
+
+	.plus {
+		height: 11px;
+		width: 11px;
+		opacity: .3;
+	
+	}
+
+	.minus {
+		height: 3px;
+		width: 11px;
+		opacity: .3;
+	}
+
+	.plus:hover, .minus:hover {
+		opacity: 1;
+	}
+
+	.score {
+		text-align: center;
+		color: #5457B6;
+		font-weight: 500;
+	}
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+	.comment-mobile {
+		display: flex;	
+	}
+
+	.comment-box > .comment > .like-box {
+		display: none;
+	}
+
+	.comment-box > .comment > .comment-content-box > .comment-top > .button-box {
+		display: none;
+	}
+
+	.level-2 .line {
+		width: 3%;
+		justify-content: start;
+	}
+	
+}

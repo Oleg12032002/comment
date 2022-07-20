@@ -494,3 +494,79 @@ body {
 .buttons-popup .delete {
   background-color: #ED6368;
 }
+
+.comment-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  display: none;
+}
+
+.like-box-mobile {
+  background-color: #EAECF1;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80px;
+}
+.like-box-mobile .plus {
+  height: 11px;
+  width: 11px;
+  opacity: 0.3;
+}
+.like-box-mobile .minus {
+  height: 3px;
+  width: 11px;
+  opacity: 0.3;
+}
+.like-box-mobile .plus:hover, .like-box-mobile .minus:hover {
+  opacity: 1;
+}
+.like-box-mobile .score {
+  text-align: center;
+  color: #5457B6;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .comment-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .comment-box > .comment > .like-box {
+    display: none;
+  }
+
+  .comment-box > .comment > .comment-content-box > .comment-top > .button-box {
+    display: none;
+  }
+
+  .level-2 .line {
+    width: 3%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}

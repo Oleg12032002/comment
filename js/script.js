@@ -49,23 +49,61 @@ function commentCreate(mine, name, time, text, avatar_url, level, score = 0, use
         <div class="comment-bottom">
           ${level == 2 ? `<span>` + `@` + userReference + `</span>` + " " + text : text}  
         </div>
+        
+        <div class="comment-mobile">
+          <div class="like-box-mobile">
+            <div class="plus" onclick="clickPlus(this)"><img src="./img/icon-plus.svg"></div>
+            <div class="score">${score}</div>
+            <div class="minus" onclick="clickMinus(this)"><img src="./img/icon-minus.svg"></div>
+          </div>
+
+          ${
+            mine ? 
+            `
+              <div class="button-box">
+                <div class="button-delete">
+                  <div>
+                    <img class="icon-comment" src="./img/icon-delete.svg">
+                  </div>
+                  <div onclick="clickDeleteReplyButton(this)">Delete</div>
+                </div>
+                <div class="button-edit">
+                  <div>
+                    <img class="icon-comment" src="./img/icon-edit.svg">
+                  </div>
+                  <div onclick="clickEditReplyButton(this)">Edit</div>
+                </div>
+              </div>
+            ` 
+            :
+            `
+              <div class="button-box">
+                <div class="button-reply">
+                    <div>
+                        <img class="icon-comment" src="./img/icon-reply.svg">
+                    </div>
+                    <div onclick="clickReplyButton(this)">Reply</div>
+                </div>
+              </div>
+            `
+          }
+        </div>
+
+
+
       </div>
     </div>
+    ${level == 1 ? `
     <div class="level-2">
-      ${
-        level == 1 ?
-        `
-          <div class="line">
-            <div></div>
-          </div>
-        ` : ``
-      }
+        <div class="line">
+          <div></div>
+        </div>
       <div class="level-2-comments-reply"></div>
     </div>
+    ` : ``}
   </div>
     `
 }
-
 
 
 
@@ -93,11 +131,13 @@ function addReference(text) {
 
 function clickMinus(e) {
   e.parentElement.querySelector('.score').innerHTML = 
+  e.closest('.comment-box').querySelector('.like-box-mobile').querySelector('.score').innerHTML =
     Number.parseInt(e.parentElement.querySelector('.score').innerHTML) - 1;
 }
 
 function clickPlus(e) {
   e.parentElement.querySelector('.score').innerHTML = 
+  e.closest('.comment-box').querySelector('.like-box-mobile').querySelector('.score').innerHTML =
     Number.parseInt(e.parentElement.querySelector('.score').innerHTML) + 1;
 }
 
@@ -153,11 +193,11 @@ function clickDeleteReplyButton(e) {
 
 let valuesUserReply = "";
 function clickReplyButton(e) {
-    valuesUserReply = `${e.closest('.comment-top').querySelector('.user-name').innerHTML}`;
+    valuesUserReply = `${e.closest('.comment-box').querySelector('.comment-top').querySelector('.user-name').innerHTML}`;
     const node = document.createElement("div");
     node.classList = "add-reply";
     node.innerHTML = `
-      <div class="avatar-1"><img src="./img/avatars/image-amyrobson.png"></div>
+      <div class="avatar-1"><img src="${curentUser.avatar}"></div>
       <textarea id="send-textarea" rows="3" placeholder="Add a comment..."></textarea>
       <button class="button-send-reply send-button" onclick="clickSendReply(this)">reply</button>
     `;
