@@ -18,28 +18,28 @@ function commentCreate(mine, name, time, text, avatar_url, level, score = 0, use
             mine ? 
             `
               <div class="button-box">
-                <div class="button-delete">
+                <div class="button-delete" onclick="clickDeleteReplyButton(this)">
                   <div>
                     <img class="icon-comment" src="./img/icon-delete.svg">
                   </div>
-                  <div onclick="clickDeleteReplyButton(this)">Delete</div>
+                  <div>Delete</div>
                 </div>
-                <div class="button-edit">
+                <div class="button-edit" onclick="clickEditReplyButton(this)">
                   <div>
                     <img class="icon-comment" src="./img/icon-edit.svg">
                   </div>
-                  <div onclick="clickEditReplyButton(this)">Edit</div>
+                  <div>Edit</div>
                 </div>
               </div>
             ` 
             :
             `
               <div class="button-box">
-                <div class="button-reply">
+                <div class="button-reply" onclick="clickReplyButton(this)">
                     <div>
                         <img class="icon-comment" src="./img/icon-reply.svg">
                     </div>
-                    <div onclick="clickReplyButton(this)">Reply</div>
+                    <div>Reply</div>
                 </div>
               </div>
             `
@@ -61,28 +61,28 @@ function commentCreate(mine, name, time, text, avatar_url, level, score = 0, use
             mine ? 
             `
               <div class="button-box">
-                <div class="button-delete">
+                <div class="button-delete" onclick="clickDeleteReplyButton(this)">
                   <div>
                     <img class="icon-comment" src="./img/icon-delete.svg">
                   </div>
-                  <div onclick="clickDeleteReplyButton(this)">Delete</div>
+                  <div>Delete</div>
                 </div>
-                <div class="button-edit">
+                <div class="button-edit" onclick="clickEditReplyButton(this)">
                   <div>
                     <img class="icon-comment" src="./img/icon-edit.svg">
                   </div>
-                  <div onclick="clickEditReplyButton(this)">Edit</div>
+                  <div>Edit</div>
                 </div>
               </div>
             ` 
             :
             `
               <div class="button-box">
-                <div class="button-reply">
+                <div class="button-reply" onclick="clickReplyButton(this)">
                     <div>
                         <img class="icon-comment" src="./img/icon-reply.svg">
                     </div>
-                    <div onclick="clickReplyButton(this)">Reply</div>
+                    <div>Reply</div>
                 </div>
               </div>
             `
